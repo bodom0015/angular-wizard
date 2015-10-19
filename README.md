@@ -123,7 +123,7 @@ You should then be able to bind to this wizard in the view template:
             <div class="modal-footer">
               <div ng-if="wizard.canNextPage()">
                 <!-- "Cancel" button (close modal with success === false) -->
-                <button class="btn btn-link pull-left" ng-if="wizard.canNextPage()" data-dismiss="modal" aria-label="Close"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;&nbsp;Cancel</button>
+                <button class="btn btn-danger pull-left" ng-if="wizard.canNextPage()" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i>&nbsp;&nbsp;Cancel</button>
                 
                 <!-- Previous Page -->
                 <button class="btn btn-primary" ng-disabled="!wizard.canPrevPage()" ng-click="wizard.prevPage()"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;Back</button>
@@ -137,7 +137,7 @@ You should then be able to bind to this wizard in the view template:
               </div>
               <div ng-if="wizard.currentPage.nextPage === null">
                 <!-- "Finish" button (close modal with success === true) -->
-                <button class="btn btn-primary" ng-disabled="!wizard.canPrevPage()" data-dismiss="modal" aria-label="Close" ng-click="wizard.success = true"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Finish</button>
+                <button class="btn btn-success" ng-disabled="!wizard.canPrevPage()" data-dismiss="modal" aria-label="Close" ng-click="wizard.success = true">Finish&nbsp;&nbsp;<i class="fa fa-check-circle"></i></button>
               </div>
             </div>
           </div>

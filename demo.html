@@ -58,8 +58,6 @@
             Launch demo wizard
           </button>
           
-          <pre>{{ wizard | json }}</pre>
-
           <!-- Wizard Popup (Modal) -->
           <div class="modal fade" id="wizardModal" tabindex="-1" role="dialog" aria-labelledby="wizardModalLabel">
             <div class="modal-dialog" role="document">
@@ -81,7 +79,7 @@
                             
                             <!-- Wizard progress bar here -->
                             <div class="progress">
-                              <div class="progress-bar" role="progressbar" aria-valuenow="{{ wizard.percentage }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{ wizard.percentage }}%;">
+                              <div class="progress-bar" ng-class="{ 'progress-bar-success':wizard.percentage === 100 }" role="progressbar" aria-valuenow="{{ wizard.percentage }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{ wizard.percentage }}%;">
                                 {{ wizard.percentage }}%
                               </div>
                             </div>
@@ -110,7 +108,7 @@
                 <div class="modal-footer">
                   <div ng-if="wizard.canNextPage()">
                     <!-- "Cancel" button (close modal with success === false) -->
-                    <button class="btn btn-link pull-left" ng-if="wizard.canNextPage()" data-dismiss="modal" aria-label="Close"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;&nbsp;Cancel</button>
+                    <button class="btn btn-danger pull-left" ng-if="wizard.canNextPage()" data-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i>&nbsp;&nbsp;Cancel</button>
                     
                     <!-- Previous Page -->
                     <button class="btn btn-primary" ng-disabled="!wizard.canPrevPage()" ng-click="wizard.prevPage()"><i class="fa fa-arrow-circle-left"></i>&nbsp;&nbsp;Back</button>
@@ -124,12 +122,18 @@
                   </div>
                   <div ng-if="wizard.currentPage.nextPage === null">
                     <!-- "Finish" button (close modal with success === true) -->
-                    <button class="btn btn-primary" ng-disabled="!wizard.canPrevPage()" data-dismiss="modal" aria-label="Close" ng-click="wizard.success = true"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Finish</button>
+                    <button class="btn btn-success" ng-disabled="!wizard.canPrevPage()" data-dismiss="modal" aria-label="Close" ng-click="wizard.success = true">Finish&nbsp;&nbsp;<i class="fa fa-check-circle"></i></button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-12">
+          <pre>{{ wizard | json }}</pre>
         </div>
       </div>
     </div>
