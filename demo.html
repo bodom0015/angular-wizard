@@ -15,7 +15,7 @@
         var wizardPages = [
            new WizardPage("first", "First Page", {
               prev: null,
-              canPrev: true,
+              canPrev: false,
               canNext: true,
               next: 'second'
            }, false),
@@ -29,7 +29,7 @@
            new WizardPage("third", "Third Page", {
               prev: 'second',
               canPrev: true,
-              canNext: true,
+              canNext: false,
               next: null
            }, true),
         ];
@@ -87,25 +87,24 @@
                             </div>
                             
                             <!-- Wizard Pages shown here -->
-                            <div style="padding:10px;">
-                                <div ng-if="wizard.currentPage.key === 'first'">
-                                  <p>This is the first page of the wizard!</p>
-                                  <p>You can use this page to introduce the user to the process that you will then step them through.</p>
-                                </div>
-                                <div ng-if="wizard.currentPage.key === 'second'">
-                                  <p>This is the second page of the wizard!</p>
-                                  <p>You can use this page to collect data about the operation that you about to perform.</p>
-                                  <p><label>NOTE:</label> Make sure to get the user's confirmation before changing any of their data.</p>
-                                </div>
-                                <div ng-show="wizard.currentPage.key === 'third'">
-                                  <p>This is the final page of the wizard!</p>
-                                  <p>This is where you can notify the user about the success (or failure) of the requested operation.</p>
-                                  <p><label>NOTE:</label> In the case of failure, you may wish to provide the user with a method of going back to adjust their input.</p>
-                                </div>
+                            <div ng-if="wizard.currentPage.key === 'firstPage'">
+                              <h3>First Page</h3>
+                              <p>This is the first page of the wizard!</p>
+                              <p>You can use this page to introduce the user to the process that you will then step them through.</p>
+                            </div>
+                            <div ng-if="wizard.currentPage.key === 'secondPage'">
+                              <h3>Second Page</h3>
+                              <p>This is the second page of the wizard!</p>
+                              <p>You can use this page to collect data about the operation that you about to perform.</p>
+                              <p><strong>NOTE:</strong> Make sure to get the user's confirmation before changing any of their data.</p>
+                            </div>
+                            <div ng-show="wizard.currentPage.key === 'thirdPage'">
+                              <h3>Final Page</h3>
+                              <p>This is the final page of the wizard!</p>
+                              <p>This is where you can notify the user about the success (or failure) of the requested operation.</p>
+                              <p><strong>NOTE:</strong> In the case of failure, you may wish to provide the user with a method of going back to adjust their input.</p>
                             </div>
                         </div>
-                        
-                        <!-- Wizard Back / Next buttons here -->
                     </div>
                 </div>
                 <div class="modal-footer">
