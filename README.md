@@ -86,19 +86,12 @@ You should then be able to bind to this wizard in the view template:
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="wizardModalLabel">Wizard Demo!</h4>
+              <h4 class="modal-title" id="wizardModalLabel">Wizard Demonstration</h4>
             </div>
             <div class="modal-body">
               <div class="row">
                     <!-- Wizard Page selector --> 
-                    <div class="col-md-12">
-                        <!-- Navigation here (work in progress) -->
-                        <!--<ul class="nav nav-pills nav-justified">
-                          <li role="presentation" ng-repeat="page in wizard.pages" ng-class="{ 'active': wizard.currentPage.key === page.key }">
-                            <button class="btn btn-link" ng-disabled="page.disabled" ng-click="wizard.setCurrentPage(page)">{{ page.displayName }}</button>
-                          </li>
-                        </ul>-->
-                        
+                    <div class="col-md-12">                        
                         <!-- Wizard progress bar here -->
                         <div class="progress">
                           <div class="progress-bar" role="progressbar" aria-valuenow="{{ wizard.percentage }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{ wizard.percentage }}%;">
@@ -108,18 +101,18 @@ You should then be able to bind to this wizard in the view template:
                         
                         <!-- Wizard Pages shown here -->
                         <div ng-if="wizard.currentPage.key === 'first'">
-                          <h3>First Page</h3>
+                          <h4>First Page</h4>
                           <p>This is the first page of the wizard!</p>
-                          <p>You can use this page to introduce the user to the process that you will then step them through.</p>
+                          <p>You can use this page to introduce the user to the operation that you are about to perform.</p>
                         </div>
                         <div ng-if="wizard.currentPage.key === 'second'">
-                          <h3>Second Page</h3>
+                          <h4>Second Page</h4>
                           <p>This is the second page of the wizard!</p>
-                          <p>You can use this page to collect data about the operation that you about to perform.</p>
-                          <p><strong>NOTE:</strong> Make sure to get the user's confirmation before changing any of their data.</p>
+                          <p>You can use this page to collect data necessary to perform the operation described on the previous page.</p>
+                          <p><strong>NOTE:</strong> Make sure to get the user's permission / confirmation before changing any of their data.</p>
                         </div>
                         <div ng-show="wizard.currentPage.key === 'third'">
-                          <h3>Final Page</h3>
+                          <h4>Final Page</h4>
                           <p>This is the final page of the wizard!</p>
                           <p>This is where you can notify the user about the success (or failure) of the requested operation.</p>
                           <p><strong>NOTE:</strong> In the case of failure, you may wish to provide the user with a method of going back to adjust their input.</p>
