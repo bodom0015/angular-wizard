@@ -107,18 +107,18 @@ You should then be able to bind to this wizard in the view template:
                         </div>
                         
                         <!-- Wizard Pages shown here -->
-                        <div ng-if="wizard.currentPage.key === 'firstPage'">
+                        <div ng-if="wizard.currentPage.key === 'first'">
                           <h3>First Page</h3>
                           <p>This is the first page of the wizard!</p>
                           <p>You can use this page to introduce the user to the process that you will then step them through.</p>
                         </div>
-                        <div ng-if="wizard.currentPage.key === 'secondPage'">
+                        <div ng-if="wizard.currentPage.key === 'second'">
                           <h3>Second Page</h3>
                           <p>This is the second page of the wizard!</p>
                           <p>You can use this page to collect data about the operation that you about to perform.</p>
                           <p><strong>NOTE:</strong> Make sure to get the user's confirmation before changing any of their data.</p>
                         </div>
-                        <div ng-show="wizard.currentPage.key === 'thirdPage'">
+                        <div ng-show="wizard.currentPage.key === 'third'">
                           <h3>Final Page</h3>
                           <p>This is the final page of the wizard!</p>
                           <p>This is where you can notify the user about the success (or failure) of the requested operation.</p>
