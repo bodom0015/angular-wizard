@@ -8,7 +8,7 @@ angular
         page.displayName = displayName;
         page.prevPage = pageLinks.prev;
         page.nextPage = pageLinks.next;
-        page.canNextPage = angular.isFunction(pageLinks.canNext) ? pageLinks.canNext : (function() { return pageLink.canNext; });
+        page.canNextPage = angular.isFunction(pageLinks.canNext) ? pageLinks.canNext : (function() { return pageLinks.canNext; });
         page.onNextPage = pageLinks.onNext;
         
         // Disable page links by default until they have been navigated to
