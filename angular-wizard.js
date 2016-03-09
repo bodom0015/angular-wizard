@@ -99,7 +99,7 @@ angular
                 onNextPage();
             }
 
-            if (angular.isFunction(wizard.currentPage.nextPage) {
+            if (angular.isFunction(wizard.currentPage.nextPage)) {
                 wizard.setCurrentPage(wizard.currentPage.nextPage());
             } else { 
                 wizard.setCurrentPage(wizard.currentPage.nextPage);
