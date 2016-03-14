@@ -91,7 +91,11 @@ angular
             return wizard.currentPage.nextPage != null && wizard.currentPage.canNextPage();
         };
         wizard.prevPage = function() {
-            wizard.setCurrentPage(wizard.currentPage.prevPage);
+            if (angular.isFunction(wizard.currentPage.prevPage)) {
+                wizard.setCurrentPage(wizard.currentPage.prevPage());
+            } else {
+                wizard.setCurrentPage(wizard.currentPage.prevPage);
+            }
         };
         wizard.nextPage = function() {
             var onNextPage = wizard.currentPage.onNextPage;
